@@ -1,17 +1,24 @@
 import React from "react"
+import "./App.css"
+
+
+const Card = ({ title }) => {
+  return (
+    <div className="card">
+      <h2>{title}</h2>
+    </div>
+  )
+}
 
 const App = () => {
   return (
-    <main>
-      <div className="pattern"/>
-      <div className="wrapper">
-          <header>
-            <img src="./hero.png" alt="Hero Banner" />
-            <h1>Find <span className="text-gradient">Movies</span> You'll Enjoy Without the Hassle</h1>
-          </header>
-        
-      </div>
-    </main>
+    <div className="card-container">
+      <h2>Functional Arrow Component</h2>
+
+      <Card title="Star Wars"/>
+      <Card title="Avatar"/>
+      <Card title="The Lion King"/>
+    </div>
   )
 }
 

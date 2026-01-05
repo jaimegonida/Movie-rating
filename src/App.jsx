@@ -1,11 +1,21 @@
-import React from "react"
+import React, { useState } from "react"
 import "./App.css"
 
 
 const Card = ({ title }) => {
+  const[hasLiked, setHasLiked] = useState( false );
+  const[count, setCount] = useState(0);
+
   return (
     <div className="card">
       <h2>{title}</h2>
+      <button onClick={() => {
+        setHasLiked(!hasLiked)
+        setCount(count + 1)
+      }}>
+        {hasLiked ? "Liked" : "Like"}
+      </button>
+    <h2>{count}</h2>
     </div>
   )
 }

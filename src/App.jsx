@@ -1,35 +1,22 @@
 import React, { useState } from "react"
-import "./App.css"
-
-
-const Card = ({ title }) => {
-  const[hasLiked, setHasLiked] = useState( false );
-  const[count, setCount] = useState(0);
-
-  return (
-    <div className="card">
-      <h2>{title}</h2>
-      <button onClick={() => {
-        setHasLiked(!hasLiked)
-        setCount(count + 1)
-      }}>
-        {hasLiked ? "Liked" : "Like"}
-      </button>
-    <h2>{count}</h2>
-    </div>
-  )
-}
+import Search from "./Search"
 
 const App = () => {
-  return (
-    <div className="card-container">
-      <h2>Functional Arrow Component</h2>
+    const [searchTerm, setSearchTerm] = useState("");
+    return (
+        <main>
+            <div className="pattern" />
 
-      <Card title="Star Wars"/>
-      <Card title="Avatar"/>
-      <Card title="The Lion King"/>
-    </div>
-  )
+            <div className="wrapper">
+                <header>
+                    <img src="./hero.png" alt="herobanner" />
+                    <h1>Find <span className="text-gradient">Movies</span> You'll Enjoy Without the Hassle</h1>
+                </header>
+                <Search searchTerm={searchTerm} setSearchTerm={setSearchTerm}/>
+                <h1 className="text-white">{searchTerm}</h1>
+            </div>
+        </main>
+    )
 }
 
 export default App
